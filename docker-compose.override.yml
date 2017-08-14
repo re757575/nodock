@@ -25,6 +25,7 @@ services:
                 - MYSQL_USER=default_user
                 - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
+        command: mysqld --sql_mode=""
         volumes_from:
             - volumes
         expose:
