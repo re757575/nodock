@@ -6,14 +6,16 @@ services:
         build:
             context: ./node
             args:
-                - NODE_VERSION=latest
+                - NODE_VERSION=7.10
                 - PROJECT_PATH=/opt/app/
-                - NODE_ENV=production
+                - NODE_ENV=development
                 - YARN=true
         volumes:
             - ../:/opt/app
         entrypoint: run-nodock "npm start"
         tty: true
+        environment:
+          NODE_ENV: development
 
     mysql:
         build:
